@@ -114,3 +114,112 @@ blockquote {
     padding-top: 3rem;
   }
 }
+
+/* Navigation Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(15, 23, 42, 0.95); /* Navy with slight transparency */
+  backdrop-filter: blur(8px); /* Frosted glass effect over stars */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Sits above content but below any modals */
+  padding: 1rem var(--site-padding);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+}
+
+.nav-logo {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-silver);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+}
+
+.nav-logo:hover {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(226, 232, 240, 0.5); /* Subtle glow */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--text-silver);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #fff;
+  border-bottom-color: var(--accent-gold);
+}
+
+/* Mobile Menu Toggle (Hidden by default) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 0.3rem;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-silver);
+  transition: all 0.3s ease;
+}
+
+/* Mobile Responsive Navigation */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(8px);
+    padding: 1.5rem;
+    gap: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 0.5rem 0;
+  }
+}
