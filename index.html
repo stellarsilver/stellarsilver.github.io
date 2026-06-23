@@ -10,9 +10,47 @@
   
 </head>
 <body>
+
+  <body>
+  <!-- Stars are applied via body::before -->
+  
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- Logo / Site Name -->
+      <a href="index.html" class="nav-logo">Silver</a>
+      
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="horoscopes.html">Horoscopes</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      
+      <!-- Mobile Menu Toggle Button -->
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Your Main Content -->
   <div class="container">
     <h1>Stellar Silver Astrology</h1>
-    <p>Your markdown/HTML content goes here...</p>
+    <p>Your markdown/html content goes here...</p>
   </div>
+
+  <!-- Optional: Script for mobile menu toggle -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  </script>
 </body>
+  
 </html>
